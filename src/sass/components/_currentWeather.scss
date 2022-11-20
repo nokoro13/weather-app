@@ -1,0 +1,22 @@
+.the-current-weather {
+    margin: auto;
+    display: flex;
+    max-width: max-content;
+    align-items: center;
+}
+
+.current-weather-list {
+    display: flex;
+    flex-direction: row;
+    width: 40vw;
+    min-width: 300px;
+    margin: auto;
+    list-style: none;
+    justify-content: space-between;
+    padding-top: 5vh;
+    padding-left: 0;
+}
+
+.current-weather-list li {
+    font-size: 2rem;
+}

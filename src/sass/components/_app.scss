@@ -1,0 +1,25 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    max-width: 90vw;
+    margin: auto;
+    padding: 0;
+}
+
+h1 {
+    display: flex;
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin: auto;
+    margin-top: 5vh;
+    margin-bottom: 10vh;
+    color: dodgerblue;
+}
+
+html {
+    height: 100%;
+/* Created with https://www.css-gradient.com */
+    background: linear-gradient( to top right, #1d1c1c 90%,white 10%);
+    color: white;
+}
