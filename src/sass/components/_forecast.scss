@@ -1,0 +1,36 @@
+.forecast-container {
+    align-self: center;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    width: 768px;
+    margin: auto;
+    background-color: dodgerblue;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.forecast-container h2 {
+    text-align: left;
+}
+
+.forecast-container h2::after {
+    content: "";
+    height: 2px;
+    width: 768px;
+    display: flex;
+    background: white;
+}
+
+.forecast-container ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    list-style: none;
+    text-align: center;
+    height: 125px;
+    justify-content: space-around;
+    padding: 0;
+}

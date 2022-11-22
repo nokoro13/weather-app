@@ -1,11 +1,11 @@
 import React from 'react'
-import {UilSun, UilTemperature} from '@iconscout/react-unicons';
+import {UilSun} from '@iconscout/react-unicons';
 function CurrentWeather() {
   return (
     <div className='current-weather-container'>
-        <div className='the-current-weather'>
+        {/* <div className='the-current-weather'>
             <p>Sunny</p>
-        </div>
+        </div> */}
         <div>
 
             <ul className='current-weather-list'>

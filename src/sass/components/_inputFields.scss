@@ -3,12 +3,13 @@
     flex-direction: row;
     margin: auto;
     align-items: center;
+    max-width: 90vw;
 }
 
 .location-search input {
   display: flex;
   flex-direction: row;
-  width: 300px;
+  width: 25vw;
   height: 2rem;
   border: 2px solid white;
   background: white;
