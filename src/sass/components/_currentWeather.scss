@@ -8,7 +8,7 @@
 .current-weather-list {
     display: flex;
     flex-direction: row;
-    width: 40vw;
+    width: 50vw;
     min-width: 300px;
     margin: auto;
     list-style: none;
@@ -18,5 +18,20 @@
 }
 
 .current-weather-list li {
-    font-size: 2rem;
+    font-size: 4rem;
+    margin: auto;
+    display: flex;
+}
+
+.current-weather-list .currently {
+    font-size: 1.5rem;
+}
+
+.bar {
+    height: 2px;
+    width: 40vw;
+    background: white;
+    display: flex;
+    margin: auto;
+    margin-bottom: 2rem;
 }

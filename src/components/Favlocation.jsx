@@ -1,6 +1,9 @@
 import React from 'react'
+import { useState } from 'react';
 
-function Favlocation() {
+function Favlocation(search) {
+
+    const [fav, setFav] = useState('');
 
     const location = [
         {
@@ -24,7 +27,7 @@ function Favlocation() {
   return (
     <div className='fav-location'>
         {location.map((locations) => (
-            <button key={locations.id}>{locations.title}</button>
+            <button prop={fav} onClick={(search) => setFav(locations.title)} key={locations.id}>{locations.title}</button>
         ))}
     </div>
   )

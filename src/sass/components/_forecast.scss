@@ -2,35 +2,35 @@
     align-self: center;
     justify-content: space-between;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     text-align: left;
-    width: 768px;
+    width: 200px;
     margin: auto;
-    background-color: dodgerblue;
+    // background-color: hsl(210, 100%, 56%, 60%);
     padding: 2rem;
     border-radius: 10px;
     margin-bottom: 2rem;
+    transition: .4s ease;
 }
 
-.forecast-container h2 {
-    text-align: left;
-}
-
-.forecast-container h2::after {
-    content: "";
-    height: 2px;
-    width: 768px;
-    display: flex;
-    background: white;
-}
-
-.forecast-container ul {
+.forecast-container-next {
+    align-self: center;
+    justify-content: space-between;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    list-style: none;
-    text-align: center;
-    height: 125px;
-    justify-content: space-around;
-    padding: 0;
+    text-align: left;
+    width: 40vw;
+    margin: auto;
+    background-color: hsl(210, 100%, 56%, 60%);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    transition: .4s ease;
+}
+
+
+.forecast-container h2 {
+    text-align: left;
 }

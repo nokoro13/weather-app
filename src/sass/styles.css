@@ -19,9 +19,23 @@ h1 {
 
 html {
   /* Created with https://www.css-gradient.com */
-  height: 100%;
-  background: linear-gradient(to top right, #1d1c1c 90%, white 10%);
+  background-color: #1d1c1c;
   color: white;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  height: 100vh;
+}
+
+.body-container {
+  background-color: red;
+  margin: 0rem;
+  padding: 0;
+  transition: 1s ease;
 }
 
 .location-search {
@@ -54,6 +68,11 @@ html {
   width: 100px;
   justify-content: space-around;
   display: flex;
+}
+
+.icons-container button {
+  background: none;
+  border: none;
 }
 
 .uil-icon {
@@ -118,6 +137,7 @@ html {
   flex-direction: column;
   margin: auto;
   text-align: center;
+  max-width: max-content;
 }
 
 .specific-location {
@@ -137,7 +157,7 @@ html {
 .current-weather-list {
   display: flex;
   flex-direction: row;
-  width: 40vw;
+  width: 50vw;
   min-width: 300px;
   margin: auto;
   list-style: none;
@@ -147,42 +167,70 @@ html {
 }
 
 .current-weather-list li {
-  font-size: 2rem;
+  font-size: 4rem;
+  margin: auto;
+  display: flex;
+}
+
+.current-weather-list .currently {
+  font-size: 1.5rem;
+}
+
+.bar {
+  height: 2px;
+  width: 40vw;
+  background: white;
+  display: flex;
+  margin: auto;
+  margin-bottom: 2rem;
 }
 
 .forecast-container {
   align-self: center;
   justify-content: space-between;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   text-align: left;
-  width: 768px;
+  width: 200px;
   margin: auto;
-  background-color: dodgerblue;
   padding: 2rem;
   border-radius: 10px;
   margin-bottom: 2rem;
+  transition: 0.4s ease;
+}
+
+.forecast-container-next {
+  align-self: center;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: left;
+  width: 40vw;
+  margin: auto;
+  background-color: hsla(210deg, 100%, 56%, 0.6);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  transition: 0.4s ease;
 }
 
 .forecast-container h2 {
   text-align: left;
 }
 
-.forecast-container h2::after {
-  content: "";
-  height: 2px;
-  width: 768px;
+.footer-container ul {
   display: flex;
-  background: white;
+  flex-direction: row;
+  width: 300px;
+  justify-content: space-evenly;
+  margin: auto;
+  list-style: none;
+  margin-top: 6rem;
+  padding: 0;
 }
 
-.forecast-container ul {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  list-style: none;
-  text-align: center;
-  height: 125px;
-  justify-content: space-around;
-  padding: 0;
+.footer-container ul li a {
+  color: white;
 }/*# sourceMappingURL=styles.css.map */
