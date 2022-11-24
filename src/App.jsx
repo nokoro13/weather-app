@@ -17,15 +17,15 @@ function App() {
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
 
-  // {onecall}
-  const search = (evt, favs) => {
-    if (evt.key === 'Enter') {
+  const search = (evt) => {
+    if (evt.key === 'Enter' || activeFav !== '' ) {
       fetch(`${weatherPath.base}weather?q=${query}&units=metric&APPID=${weatherPath.key}`)
       .then(res => res.json())
       .then(result => {
         setWeather(result);
         setQuery('');
         console.log(result);
+        setActiveFav('');
       });
     }
   }
@@ -72,6 +72,8 @@ function App() {
         }, 
     ]
 
+    const [activeFav, setActiveFav] = useState('');
+
 
   return (
     <main>
@@ -81,9 +83,15 @@ function App() {
 
       <div className='fav-location'>
         {location.map((locations) => (
-            <button prop={query} onClick={() => {setQuery(locations.title)}} key={locations.id}>{locations.title}</button>
+            <button className={locations.title === query ? 'button-go' : '' || activeFav === true ? 'button-hide' : ''} prop={query} onClick={() => {setQuery(locations.title); search(query); setActiveFav(true);}} key={locations.id}>{ locations.title !== query ? locations.title : 'Go'}</button>
         ))}
     </div>
+
+      {/* <div className='fav-location'>
+        {location.map((locations) => (
+            <button prop={query} onClick={(evnt) => {setQuery(locations.title)}} key={locations.id}>{locations.title}</button>
+        ))}
+    </div> */}
 
       <div className='location-search'>
 
@@ -94,10 +102,10 @@ function App() {
         <button onClick={handleCurrentLocation}><UilLocationPoint size={35} className='uil-icon'/></button>
       </div> 
 
-      <div className='met-imp'>
+      {/* <div className='met-imp'>
         <button name='metric'>°C</button>
         <button name='imperial'>°F</button>
-      </div>
+      </div> */}
 
     </div>
 
@@ -106,7 +114,7 @@ function App() {
 
             <ul className='current-weather-list'>
                 {/* <li><UilSun size={64} color={'orange'}/></li> */}
-                <li>{(typeof weather.main != "undefined" && weather.weather[0].description === 'overcast clouds' ? <UilCloud size={64}/> : typeof weather.main != "undefined" && weather.weather[0].description === 'snow' ? <UilSnowFlake size={65} color={'dodgerblue'}/> : typeof weather.main != "undefined" && weather.weather[0].description === 'heavy intensity rain' ? <UilCloudShowersAlt  size={65}/> : typeof weather.main != "undefined" && weather.weather[0].description === 'clear sky' ? <UilSun size={65} color={'orange'}/> : typeof weather.main != "undefined" && weather.weather[0].description === 'light rain' ? <UilCloudDrizzle size={65} color={'dodgerblue'}/> : typeof weather.main != "undefined" && weather.weather[0].description === 'drizzle rain' ? <UilCloudDrizzle size={65} color={'dodgerblue'}/> :  typeof weather.main != "undefined" && weather.weather[0].description === 'light intensity drizzle' ? <UilCloudDrizzle size={65} color={'dodgerblue'}/> :  <UilCloud size={65}/>)}</li>
+                <li>{(typeof weather.main != "undefined" && weather.weather[0].description === 'overcast clouds' ? <UilCloud size={64}/> : typeof weather.main != "undefined" && weather.weather[0].description === 'snow' ? <UilSnowFlake size={65} color={'dodgerblue'}/> : typeof weather.main != "undefined" && weather.weather[0].description === 'heavy intensity rain' ? <UilCloudShowersAlt  size={65}/> : typeof weather.main != "undefined" && weather.weather[0].description === 'clear sky' ? <UilSun size={65} color={'orange'}/> : typeof weather.main != "undefined" && weather.weather[0].description === 'light rain' ? <UilCloudDrizzle size={65} color={'dodgerblue'}/> : typeof weather.main != "undefined" && weather.weather[0].description === 'drizzle rain' ? <UilCloudDrizzle size={65} color={'dodgerblue'}/> : typeof weather.main != "undefined" && weather.weather[0].description === 'mist' ? <UilCloudDrizzle size={65} color={'dodgerblue'}/> : typeof weather.main != "undefined" && weather.weather[0].description === 'light intensity drizzle' ? <UilCloudDrizzle size={65} color={'dodgerblue'}/> :  <UilCloud size={65}/>)}</li>
 
                 <li className='currently'>{(typeof weather.main != "undefined" ? weather.weather[0].description : 'Currently')}</li>
                 <li>{(typeof weather.main != "undefined" ? Math.round(weather.main.temp) : '0')}°</li>
