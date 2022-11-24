@@ -49,7 +49,8 @@ main {
 .location-search input {
   display: flex;
   flex-direction: row;
-  width: 25vw;
+  width: 40vw;
+  max-width: 500px;
   height: 2rem;
   border: 2px solid white;
   background: white;
@@ -145,6 +146,9 @@ main {
 
 @media (max-width: 768px) {
   .fav-location button {
+    font-size: 1rem;
+  }
+  .fav-location .button-go {
     font-size: 1rem;
   }
 }
