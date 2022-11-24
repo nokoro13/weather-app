@@ -240,6 +240,23 @@ main {
   transition: 0.4s ease;
 }
 
+@media (max-width: 768px) {
+  .forecast-container-next {
+    align-self: center;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: left;
+    width: 80vw;
+    margin: auto;
+    background-color: hsla(210deg, 100%, 56%, 0.6);
+    padding: 0.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    transition: 0.4s ease;
+  }
+}
 .forecast-container h2 {
   text-align: left;
 }

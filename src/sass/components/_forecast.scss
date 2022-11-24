@@ -30,6 +30,24 @@
     transition: .4s ease;
 }
 
+@media (max-width: 768px) {
+    .forecast-container-next {
+        align-self: center;
+        justify-content: space-between;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        text-align: left;
+        width: 80vw;
+        margin: auto;
+        background-color: hsl(210, 100%, 56%, 60%);
+        padding: .5rem;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        transition: .4s ease;
+    }
+}
+
 
 .forecast-container h2 {
     text-align: left;
